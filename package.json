@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deletelogs": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.1.0"
+    "dotenv": "^8.1.0",
+    "jsforce": "^1.9.2"
   }
 }
