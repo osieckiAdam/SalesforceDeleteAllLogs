@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deletelogs": "node index.js",
+    "deletelogs": "node index.js deleteApexLogs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.2",
     "dotenv": "^8.1.0",
     "jsforce": "^1.9.2"
   }
