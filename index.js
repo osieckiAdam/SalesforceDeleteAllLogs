@@ -49,6 +49,8 @@ function login(callback) {
 }
 
 function deleteApexLogs() {
+  conn.bulk.pollInterval = 10000;
+  conn.bulk.pollTimeout = 60000;
   conn
     .sobject("ApexLog")
     .find({}, ["Id"])
