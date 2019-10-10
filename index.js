@@ -49,19 +49,23 @@ function login(callback) {
 }
 
 function deleteApexLogs() {
+  console.log("conn.bulk.pollInterval: ", conn.bulk.pollInterval);
+  console.log("conn.bulk.pollTimeout: ", conn.bulk.pollTimeout);
+  conn.bulk.pollInterval = 10000;
+  conn.bulk.pollTimeout = 60000;
   conn
     .sobject("ApexLog")
     .find({}, ["Id"])
-    .execute(function(err, records) {
+    .execute({ autoFetch: true, maxFetch: 10000 }, function(err, records) {
       if (err) {
         return console.error(err);
       }
+      console.log(records.length);
     })
-    .destroy(function(err, rets) {
+    .del({ allowRecursive: true }, function(err, rets) {
       if (err) {
         return console.error(err);
       }
       log(chalk.bold.green("NUMBER OF DELETED RECORDS: ") + rets.length);
-      console.log(rets);
     });
 }

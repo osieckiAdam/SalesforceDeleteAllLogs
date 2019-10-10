@@ -1,13 +1,14 @@
 {
-  "name": "deletealllogs",
-  "version": "1.0.0",
-  "description": "",
+  "name": "salesforcedeletealllogs",
+  "version": "0.1.0",
+  "description": "Simple script which allows You to delete all debug logs on Your salesforce org",
   "main": "index.js",
+  "repository": "github:osieckiAdam/SalesforceDeleteAllLogs",
   "scripts": {
     "deletelogs": "node index.js deleteApexLogs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Adam Osiecki",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
