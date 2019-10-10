@@ -49,13 +49,10 @@ function login(callback) {
 }
 
 function deleteApexLogs() {
-  console.log("conn.bulk.pollInterval: ", conn.bulk.pollInterval);
-  console.log("conn.bulk.pollTimeout: ", conn.bulk.pollTimeout);
-  conn.bulk.pollInterval = 10000;
-  conn.bulk.pollTimeout = 60000;
   conn
     .sobject("ApexLog")
     .find({}, ["Id"])
+    .sort({ LogLength: -1 })
     .execute({ autoFetch: true, maxFetch: 10000 }, function(err, records) {
       if (err) {
         return console.error(err);
