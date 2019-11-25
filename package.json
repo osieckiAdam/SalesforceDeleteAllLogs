@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
-    "dotenv": "^8.1.0",
-    "jsforce": "^1.9.2"
+    "dotenv": "^8.2.0",
+    "jsforce": "^1.9.x"
   }
 }
